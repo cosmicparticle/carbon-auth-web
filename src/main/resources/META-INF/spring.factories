@@ -1,0 +1,2 @@
+#-------starter自动装配---------
+2 org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.demo.starter.config.DemoConfig
