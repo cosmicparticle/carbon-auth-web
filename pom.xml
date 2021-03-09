@@ -11,13 +11,13 @@
 	
 	<groupId>cho.carbon</groupId>
 	<artifactId>carbon-auth-web</artifactId>
-	<version>0.1</version>
+	<version>0.2</version>
 	<name>carbon-auth-web</name>
 	<description>CARBON用户认证的</description>
 
 	<properties>
 		<java.version>1.8</java.version>
-		<version.carbon-bond>0.2</version.carbon-bond>
+		<version.carbon-bond>0.3</version.carbon-bond>
 		<version.carbon-auth>0.1</version.carbon-auth>
 		<output.dependence.file.path>lib/</output.dependence.file.path>
 		<output.resource.file.path>resources/</output.resource.file.path>
