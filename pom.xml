@@ -17,7 +17,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<version.carbon-bond>0.1</version.carbon-bond>
+		<version.carbon-bond>0.2</version.carbon-bond>
 		<version.carbon-auth>0.1</version.carbon-auth>
 		<output.dependence.file.path>lib/</output.dependence.file.path>
 		<output.resource.file.path>resources/</output.resource.file.path>
