@@ -9,6 +9,7 @@ import cho.carbon.bond.pojo.criteria.conveter.CriteriaConverter;
 import cho.carbon.bond.utils.TextUtils;
 import cho.carbon.query.entity.factory.EnRightRelationJunctionFactory;
 import cho.carbon.query.entity.factory.EntityConJunctionFactory;
+import org.springframework.stereotype.Service;
 
 public class UserRelationExistCriteriaConverter implements CriteriaConverter {
 
@@ -29,7 +30,7 @@ public class UserRelationExistCriteriaConverter implements CriteriaConverter {
             String fieldGroupName = nCriteria.getMStrucFieldGroup().getTitle();
             EnRightRelationJunctionFactory rightCriteriaFactory = conjunctionFactory.getRighterCriteriaFactory(fieldGroupName);
             rightCriteriaFactory.getRightRelationCriterionFactory().setInRelationTypes(nCriteria.getValue());
-            String userCode = UserUtils.getCurrentUser().getUserInfo().getCode();
+            String userCode = UserUtils.getCurrentUserCode();
             rightCriteriaFactory.getRightRelationCriterionFactory().setInRightCodes(userCode);
         }
     }

@@ -8,6 +8,8 @@ import cho.carbon.bond.utils.TextUtils;
 import cho.carbon.query.entity.factory.EnRightRelationCriterionFactory;
 import cho.carbon.query.entity.factory.EnRightRelationJunctionFactory;
 import cho.carbon.query.entity.factory.EntityConJunctionFactory;
+import org.springframework.stereotype.Service;
+
 
 public class Level2UserRelationExistCriteriaConverter implements CriteriaConverter {
 
@@ -29,10 +31,11 @@ public class Level2UserRelationExistCriteriaConverter implements CriteriaConvert
         EnRightRelationJunctionFactory rightCriteriaFactory = conjunctionFactory.getRighterCriteriaFactory(fieldGroupName);
         EnRightRelationCriterionFactory factory = rightCriteriaFactory.getRightRelationCriterionFactory();
         String oneLevelValue=value.getOneLevelValue();
+        String userCode = UserUtils.getCurrentUserCode();
         //添加1leve
         if ("re2".equals(nCriteria.getComparator())) {
             factory.setInRelationTypes(oneLevelValue);
-            String userCode = UserUtils.getCurrentUser().getUserInfo().getCode();
+
             factory.setInRightCodes(userCode);
         } else if ("re1".equals(nCriteria.getComparator())) {
             factory.setInRelationTypes(oneLevelValue);
@@ -44,7 +47,6 @@ public class Level2UserRelationExistCriteriaConverter implements CriteriaConvert
 		String twoLevelValue=value.getTwoLevelValue();
 		if ("re2".equals(value.getTwoLevelComparator())) {
 			factory2.setInRelationTypes(twoLevelValue);
-			String userCode = UserUtils.getCurrentUser().getUserInfo().getCode();
 			factory2.setInRightCodes(userCode);
 		} else if ("re1".equals(value.getTwoLevelComparator())) {
 			factory2.setInRelationTypes(twoLevelValue);

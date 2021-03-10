@@ -7,6 +7,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import cho.carbon.spring.security.pojo.ABCUser;
 
 public class UserUtils {
+	private static ThreadLocal<String> threadUserCode = new ThreadLocal();
 	/**
 	 * 获得当前登录的用户对象
 	 * @param userClass
@@ -26,6 +27,15 @@ public class UserUtils {
 			return (T) user;
 		}
 		return null;
+	}
+	public static void setCurrentUserCode(String userCode){
+		threadUserCode.set(userCode);
+	}
+
+	public static String getCurrentUserCode(){
+
+		return threadUserCode.get();
+
 	}
 	
 	/**

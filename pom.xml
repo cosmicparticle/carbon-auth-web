@@ -11,7 +11,7 @@
 	
 	<groupId>cho.carbon</groupId>
 	<artifactId>carbon-auth-web</artifactId>
-	<version>0.2</version>
+	<version>0.3</version>
 	<name>carbon-auth-web</name>
 	<description>CARBON用户认证的</description>
 

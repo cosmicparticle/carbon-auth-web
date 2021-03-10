@@ -63,6 +63,9 @@ public class ApiUserResolver implements HandlerMethodArgumentResolver{
 				Token token = uService.validateToken(tokenCode,userName,tokenTime);
 				token.refreshDeadline();
 				UserWithToken user = token.getUser();
+				if(user != null) {
+					UserUtils.setCurrentUserCode(user.getCode());
+				}
 				return user;
 			} catch (Exception e) {
 				logger.error("验证用户token时发生异常", e);
